@@ -1,0 +1,4 @@
+# the root .gitignore keeps pictures out of git; this site needs its own to be served
+!og.jpg
+!favicon.png
+!apple-touch-icon.png

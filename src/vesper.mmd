@@ -1,0 +1,17 @@
+---
+config:
+  state:
+    rankSpacing: 12
+    nodeSpacing: 44
+---
+stateDiagram-v2
+  direction BT
+  state "Seed head" as Seedhead
+  state "Flower" as Bell
+  [*] --> Seed
+  Seed --> Sprout : spring rain
+  Sprout --> Bud : six weeks<br>of sun
+  Bud --> Bell : opens one<br>evening
+  Bell --> Bell : rings at<br>dusk
+  Bell --> Seedhead : dries after<br>a month
+  Seedhead --> Seed : blown by<br>the wind

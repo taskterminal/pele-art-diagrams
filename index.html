@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagrams, drawn by hand</title>
+<meta name="description" content="Four made-up worlds, one diagram each. pele lays every diagram out, and JavaScript draws it in your browser with a simulated pen and coloured pencils.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Diagrams, drawn by hand">
+<meta property="og:description" content="Four made-up worlds, one diagram each. Laid out by pele, drawn in code.">
+<meta property="og:url" content="">
+<meta property="og:image" content="og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The title Diagrams, drawn by hand, beside four hand-drawn diagram plates: a windy valley, a bell flower, a thunder machine and a comet.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Diagrams, drawn by hand">
+<meta name="twitter:description" content="Four made-up worlds, one diagram each. Laid out by pele, drawn in code.">
+<meta name="twitter:image" content="og.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<script src="vendor/pele.global.js" defer></script>
+<script src="site.js" defer></script>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Diagrams, drawn by hand</h1>
+  <p class="lede">Four made-up worlds, one diagram each. <a href="https://pele.run">pele</a> lays every diagram out, and JavaScript draws it, stroke by stroke, with a simulated pen and coloured pencils. Nothing here is an image file: each picture is drawn in your browser as you read.</p>
+  <noscript><p class="lede">The pictures on this page are drawn by JavaScript. Turn it on to see them.</p></noscript>
+</header>
+
+<section aria-labelledby="plates">
+  <h2 id="plates" class="visually-hidden">The four plates</h2>
+
+  <figure class="plate">
+    <canvas data-plate="wind" width="2048" height="2048" role="img"
+      aria-label="A hand-drawn plate titled The wind's day, in Hollin Vale, dawn to night. A radar chart in the sky over a valley with a windmill, a village, a river and a kite compares how strong the wind is with how warm the air is at dawn, morning, noon, afternoon, dusk and night. The wind is strongest at noon, then dawn, and almost still at night. The air is warmest in the afternoon and coldest at dawn."></canvas>
+    <figcaption><h3>The wind's day</h3><span>A radar chart of one day's wind in a valley.</span></figcaption>
+    <p class="status"><span data-status="wind" aria-live="polite">Waiting to be drawn.</span> <button type="button" class="save" data-save="wind" hidden>Save as PNG</button></p>
+  </figure>
+
+  <figure class="plate">
+    <canvas data-plate="vesper" width="2048" height="2048" role="img"
+      aria-label="A hand-drawn botanical plate titled The vesper bell, a flower that rings at dusk. A state diagram goes from seed to sprout with spring rain, to bud after six weeks of sun, to flower when it opens one evening. The flower rings at dusk, dries after a month into a seed head, and its seeds are blown by the wind back to seed. Drawings of the bell, the bud, the sprout in soil, the seed head and winged seeds sit beside the diagram."></canvas>
+    <figcaption><h3>The vesper bell</h3><span>A state diagram of a flower's life.</span></figcaption>
+    <p class="status"><span data-status="vesper" aria-live="polite">Waiting to be drawn.</span> <button type="button" class="save" data-save="vesper" hidden>Save as PNG</button></p>
+  </figure>
+
+  <figure class="plate">
+    <canvas data-plate="thunder" width="2048" height="2048" role="img"
+      aria-label="A hand-drawn patent plate titled Bottling thunder, E. Marrowby's apparatus of 1893. A sankey diagram runs through the machine: of a storm's 100 claps, 58 are lost to the hills and 42 are caught by the rod. Of those, 5 burn up in the coils and 37 are cooled and pressed into three bottles: grade 1, a sharp crack, 7; grade 2, a low rumble, 21; grade 3, a far-off grumble, 9."></canvas>
+    <figcaption><h3>Bottling thunder</h3><span>A sankey of a storm, through a machine, into bottles.</span></figcaption>
+    <p class="status"><span data-status="thunder" aria-live="polite">Waiting to be drawn.</span> <button type="button" class="save" data-save="thunder" hidden>Save as PNG</button></p>
+  </figure>
+
+  <figure class="plate">
+    <canvas data-plate="comet" width="2048" height="2048" role="img"
+      aria-label="A hand-drawn star chart titled The comet's long way home. Comet Sorrel goes round the sun once every 76 years. A timeline under the drawing of its orbit reads: year 0, closest to the sun; year 5, passes a ringed giant; year 38, turns back, far away; year 71, passes the giant again; year 76, back at the sun."></canvas>
+    <figcaption><h3>The comet's long way home</h3><span>A timeline of one 76-year orbit.</span></figcaption>
+    <p class="status"><span data-status="comet" aria-live="polite">Waiting to be drawn.</span> <button type="button" class="save" data-save="comet" hidden>Save as PNG</button></p>
+  </figure>
+</section>
+
+<section aria-labelledby="how">
+  <h2 id="how">How they were made</h2>
+  <ol class="steps">
+    <li><b>Write the diagram as text.</b> A few lines of Mermaid.</li>
+    <li><b>Let pele lay it out.</b> pele, Obsidian's open-source Mermaid renderer, places every box, band, curve and label. It measures each word with the same hand lettering the drawing uses, so everything fits.</li>
+    <li><b>Draw it by hand, in code.</b> A program reads pele's shapes back and redraws them with a simulated fine pen and coloured pencils, then draws the world around them. Every letter is traced from A. V. Hershey's 1967 engraving letters. The program runs right here, in your browser.</li>
+  </ol>
+
+  <div class="made" data-made="wind">
+    <h3>The wind's day</h3>
+    <div class="row">
+      <figure><pre tabindex="0" aria-label="Mermaid text for The wind's day"><code data-src="wind">---
+config:
+  radar:
+    showLegend: false
+---
+radar-beta
+  axis dawn["Dawn"], morning["Morning"], noon["Noon"], afternoon["Afternoon"], dusk["Dusk"], night["Night"]
+  curve strength["how strong the wind is"]{4, 2, 5, 3, 2, 1}
+  curve warmth["how warm the air is"]{1, 3, 4, 5, 3, 2}
+  max 5
+  min 0
+  ticks 5</code></pre><figcaption>1. The text</figcaption></figure>
+      <figure><div class="pele" data-pele="wind" data-label="pele's plain layout: a radar chart with six axes and two curves."></div><figcaption>2. pele's layout, made live</figcaption></figure>
+      <figure><canvas data-over="wind" width="1024" height="1024" role="img" aria-label="The finished plate, faded, with pele's shapes outlined in blue on top. The drawn dial follows them exactly."></canvas><figcaption>3. pele's shapes, in blue, on the drawing</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="made" data-made="vesper">
+    <h3>The vesper bell</h3>
+    <div class="row">
+      <figure><pre tabindex="0" aria-label="Mermaid text for The vesper bell"><code data-src="vesper">---
+config:
+  state:
+    rankSpacing: 12
+    nodeSpacing: 44
+---
+stateDiagram-v2
+  direction BT
+  state "Seed head" as Seedhead
+  state "Flower" as Bell
+  [*] --&gt; Seed
+  Seed --&gt; Sprout : spring rain
+  Sprout --&gt; Bud : six weeks&lt;br&gt;of sun
+  Bud --&gt; Bell : opens one&lt;br&gt;evening
+  Bell --&gt; Bell : rings at&lt;br&gt;dusk
+  Bell --&gt; Seedhead : dries after&lt;br&gt;a month
+  Seedhead --&gt; Seed : blown by&lt;br&gt;the wind</code></pre><figcaption>1. The text</figcaption></figure>
+      <figure><div class="pele" data-pele="vesper" data-label="pele's plain layout: five states in a column, with a loop back from seed head to seed."></div><figcaption>2. pele's layout, made live</figcaption></figure>
+      <figure><canvas data-over="vesper" width="1024" height="1024" role="img" aria-label="The finished plate, faded, with pele's shapes outlined in blue on top. Each specimen tag and arrow sits on pele's box and line."></canvas><figcaption>3. pele's shapes, in blue, on the drawing</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="made" data-made="thunder">
+    <h3>Bottling thunder</h3>
+    <div class="row">
+      <figure><pre tabindex="0" aria-label="Mermaid text for Bottling thunder"><code data-src="thunder">---
+config:
+  sankey:
+    width: 640
+    height: 560
+    nodeWidth: 60
+    nodePadding: 110
+    nodeAlignment: left
+---
+sankey-beta
+Caught by the rod,Cooled and pressed,37
+Cooled and pressed,"Grade 1: a sharp crack",7
+Cooled and pressed,"Grade 2: a low rumble",21
+Cooled and pressed,"Grade 3: a far-off grumble",9
+Caught by the rod,Burnt up in the coils,5
+Storm,Caught by the rod,42
+Storm,Lost to the hills,58</code></pre><figcaption>1. The text</figcaption></figure>
+      <figure><div class="pele" data-pele="thunder" data-label="pele's plain layout: a sankey with bands splitting from the storm to the rod, the coils, the chamber and three bottles."></div><figcaption>2. pele's layout, made live</figcaption></figure>
+      <figure><canvas data-over="thunder" width="1024" height="1024" role="img" aria-label="The finished plate, faded, with pele's shapes outlined in blue on top. The machine parts are drawn on pele's nodes and the bands follow pele's bands."></canvas><figcaption>3. pele's shapes, in blue, on the drawing</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="made" data-made="comet">
+    <h3>The comet's long way home</h3>
+    <div class="row">
+      <figure><pre tabindex="0" aria-label="Mermaid text for The comet's long way home"><code data-src="comet">timeline
+  Year 0 : Closest to the sun
+  Year 5 : Passes a ringed giant
+  Year 38 : Turns back, far away
+  Year 71 : Passes the giant again
+  Year 76 : Back at the sun</code></pre><figcaption>1. The text</figcaption></figure>
+      <figure><div class="pele" data-pele="comet" data-label="pele's plain layout: a timeline with five years and a note under each."></div><figcaption>2. pele's layout, made live</figcaption></figure>
+      <figure><canvas data-over="comet" width="1024" height="1024" role="img" aria-label="The finished plate, faded, with pele's shapes outlined in blue on top. The timeline along the bottom follows pele's boxes and line."></canvas><figcaption>3. pele's shapes, in blue, on the drawing</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="burger">
+  <h2 id="burger">How a burger is made, in 12 diagrams</h2>
+  <p>An earlier piece: one burger, explained with twelve kinds of diagram. pele lays them out and the film's own code draws them, here, as you scroll.</p>
+  <figure class="plate">
+    <iframe class="burger" src="burger/film.html?render&amp;sheet" loading="lazy" title="How a burger is made, in 12 diagrams: a mindmap of its layers, a sankey from sunlight to burger, a state diagram of a cow's four stomachs, a timeline of cheese, a flowchart of rising dough, a sequence diagram of a bee and a pickle, a gantt chart showing lunch takes 18 months, a git graph where everything merges at noon, a kanban board, an xy chart of a patty on a griddle, a packet diagram of the stack, and a pie chart of burger remaining."></iframe>
+    <p class="status"><span data-status="burger" aria-live="polite">Waiting to be drawn.</span></p>
+  </figure>
+</section>
+
+<footer class="credits">
+  <p>Laid out by <a href="https://pele.run">pele</a> (MIT). Letters from A. V. Hershey's 1967 fonts (public domain), by way of hersheytext (MIT). Drawn in code by Claude Opus 5.5.</p>
+</footer>
+
+</main>
+</body>
+</html>
