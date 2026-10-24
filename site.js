@@ -56,7 +56,7 @@ async function made(n) {
   const M = JSON.parse(await getMarks(n)).marks, ov = document.querySelector(`canvas[data-over="${n}"]`), W = ov.width, k = W / 2048, g = ov.getContext('2d');
   g.imageSmoothingQuality = 'high'; g.drawImage(cvs[n], 0, 0, W, W); g.fillStyle = 'rgba(255,255,255,.62)'; g.fillRect(0, 0, W, W);
   g.strokeStyle = '#1b4fd1'; g.fillStyle = 'rgba(27,79,209,.10)'; g.lineWidth = 2.2 * W / 1024; g.lineJoin = g.lineCap = 'round';
-  // shapes only: the words were lettered by hand where they fit best, and pele's legend and label backings weren't drawn
+  // shapes only: the plate letters its words where they fit best, and pele's legend and label backings weren't drawn
   for (const m of M) {
     if (!m.P || m.P.length < 2 || m.tag === 'text' || m.cls.includes('pele-legend') || m.cls.includes('pele-edge-label')) continue;
     g.beginPath(); g.moveTo(m.P[0][0] * k, m.P[0][1] * k); for (const q of m.P.slice(1)) g.lineTo(q[0] * k, q[1] * k); if (m.closed) { g.closePath(); g.fill() } g.stroke();

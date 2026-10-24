@@ -41,16 +41,17 @@ execFileSync('node', [path.join(BURGER, 'build.mjs'), '--out', path.join(HERE, '
 // the share card: title on the left, the four plates in a square on the right
 {
   const c = createCanvas(1200, 630), g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, 1200, 630); g.imageSmoothingQuality = 'high';
-  const S = 262, GAP = 10, X = 1200 - 48 - 2 * S - GAP, Y = (630 - 2 * S - GAP) / 2;
+  const S = 244, GAP = 10, X = 1200 - 48 - 2 * S - GAP, Y = (630 - 2 * S - GAP) / 2;
   for (const [i, p] of PLATES.entries()) g.drawImage(await loadImage(fs.readFileSync(path.join(FOUR, 'out', p + '.png'))), X + (i % 2) * (S + GAP), Y + Math.floor(i / 2) * (S + GAP), S, S);
   const F = JSON.parse(fs.readFileSync(path.join(FOUR, 'lib/hershey-fonts.json'), 'utf8')), TR = .02;
   const wide = (str, face) => [...str].reduce((w, ch) => w + ((F[face][ch] || F[face][' '])[0] + TR), 0) - TR;   // in caps
   const letter = (str, x, y, cap, face, w) => { const H = F[face]; g.strokeStyle = '#1d1a18'; g.lineWidth = w; g.lineCap = g.lineJoin = 'round';
     for (const ch of str) { const gl = H[ch] || H[' ']; for (const st of gl[1]) { g.beginPath(); for (let i = 0; i < st.length; i += 2) g[i ? 'lineTo' : 'moveTo'](x + st[i] * cap, y + st[i + 1] * cap); g.stroke() } x += (gl[0] + TR) * cap } };
-  const L0 = 56, room = X - 48 - L0, title = ['Diagrams,', 'drawn by hand'], sub = ['Four made-up worlds,', 'one diagram each.', 'Laid out by pele,', 'drawn in code.'];
-  const cap = Math.min(64, room / Math.max(...title.map((t) => wide(t, 'serif')))), sc = Math.min(24, room / Math.max(...sub.map((t) => wide(t, 'italic'))));
-  let y = 150; for (const t of title) { letter(t, L0, y, cap, 'serif', cap * .05); y += cap * 1.55 }
-  y += sc * .9; for (const [i, t] of sub.entries()) { letter(t, L0 + 2, y, sc, 'italic', 1.6); y += sc * (i === 1 ? 2.3 : 1.75) }
+  const L0 = 56, room = X - 48 - L0, title = ['Diagrams,', 'drawn with JavaScript'], sub = ['Four made-up worlds,', 'one diagram each.', 'Laid out by pele,', 'drawn in your browser.'];
+  const cap = Math.min(64, room / Math.max(...title.map((t) => wide(t, 'serif')))), sc = Math.min(cap * .48, room / Math.max(...sub.map((t) => wide(t, 'italic'))));
+  const tall = cap + cap * 1.55 + sc * 1.4 + sc * (1.75 * 2 + 2.3);   // the block's height, baseline to baseline, to centre it
+  let y = (630 - tall) / 2 + cap * .6; for (const t of title) { letter(t, L0, y, cap, 'serif', cap * .055); y += cap * 1.55 }
+  y += sc * 1.4; for (const [i, t] of sub.entries()) { letter(t, L0 + 2, y, sc, 'italic', 1.5); y += sc * (i === 1 ? 2.3 : 1.75) }
   write('og.jpg', await c.encode('jpeg', 88));
 }
 // the icons: the bell from the vesper plate, with its sound

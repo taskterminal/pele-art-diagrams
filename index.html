@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diagrams, drawn by hand</title>
+<title>Diagrams, drawn with JavaScript</title>
 <meta name="description" content="Four made-up worlds, one diagram each. pele lays every diagram out, and JavaScript draws it in your browser with a simulated pen and coloured pencils.">
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Diagrams, drawn by hand">
-<meta property="og:description" content="Four made-up worlds, one diagram each. Laid out by pele, drawn in code.">
+<meta property="og:title" content="Diagrams, drawn with JavaScript">
+<meta property="og:description" content="Four made-up worlds, one diagram each. Laid out by pele, drawn in your browser.">
 <meta property="og:url" content="">
 <meta property="og:image" content="og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The title Diagrams, drawn by hand, beside four hand-drawn diagram plates: a windy valley, a bell flower, a thunder machine and a comet.">
+<meta property="og:image:alt" content="The title Diagrams, drawn with JavaScript, beside four diagram plates in pen and pencil: a windy valley, a bell flower, a thunder machine and a comet.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Diagrams, drawn by hand">
-<meta name="twitter:description" content="Four made-up worlds, one diagram each. Laid out by pele, drawn in code.">
+<meta name="twitter:title" content="Diagrams, drawn with JavaScript">
+<meta name="twitter:description" content="Four made-up worlds, one diagram each. Laid out by pele, drawn in your browser.">
 <meta name="twitter:image" content="og.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -28,7 +28,7 @@
 <main>
 
 <header>
-  <h1>Diagrams, drawn by hand</h1>
+  <h1>Diagrams, drawn with JavaScript</h1>
   <p class="lede">Four made-up worlds, one diagram each. <a href="https://pele.run">pele</a> lays every diagram out, and JavaScript draws it, stroke by stroke, with a simulated pen and coloured pencils. Nothing here is an image file: each picture is drawn in your browser as you read.</p>
   <noscript><p class="lede">The pictures on this page are drawn by JavaScript. Turn it on to see them.</p></noscript>
 </header>
@@ -38,28 +38,28 @@
 
   <figure class="plate">
     <canvas data-plate="wind" width="2048" height="2048" role="img"
-      aria-label="A hand-drawn plate titled The wind's day, in Hollin Vale, dawn to night. A radar chart in the sky over a valley with a windmill, a village, a river and a kite compares how strong the wind is with how warm the air is at dawn, morning, noon, afternoon, dusk and night. The wind is strongest at noon, then dawn, and almost still at night. The air is warmest in the afternoon and coldest at dawn."></canvas>
+      aria-label="A pen-and-pencil plate titled The wind's day, in Hollin Vale, dawn to night. A radar chart in the sky over a valley with a windmill, a village, a river and a kite compares how strong the wind is with how warm the air is at dawn, morning, noon, afternoon, dusk and night. The wind is strongest at noon, then dawn, and almost still at night. The air is warmest in the afternoon and coldest at dawn."></canvas>
     <figcaption><h3>The wind's day</h3><span>A radar chart of one day's wind in a valley.</span></figcaption>
     <p class="status"><span data-status="wind" aria-live="polite">Waiting to be drawn.</span> <button type="button" class="save" data-save="wind" hidden>Save as PNG</button></p>
   </figure>
 
   <figure class="plate">
     <canvas data-plate="vesper" width="2048" height="2048" role="img"
-      aria-label="A hand-drawn botanical plate titled The vesper bell, a flower that rings at dusk. A state diagram goes from seed to sprout with spring rain, to bud after six weeks of sun, to flower when it opens one evening. The flower rings at dusk, dries after a month into a seed head, and its seeds are blown by the wind back to seed. Drawings of the bell, the bud, the sprout in soil, the seed head and winged seeds sit beside the diagram."></canvas>
+      aria-label="A pen-and-pencil botanical plate titled The vesper bell, a flower that rings at dusk. A state diagram goes from seed to sprout with spring rain, to bud after six weeks of sun, to flower when it opens one evening. The flower rings at dusk, dries after a month into a seed head, and its seeds are blown by the wind back to seed. Drawings of the bell, the bud, the sprout in soil, the seed head and winged seeds sit beside the diagram."></canvas>
     <figcaption><h3>The vesper bell</h3><span>A state diagram of a flower's life.</span></figcaption>
     <p class="status"><span data-status="vesper" aria-live="polite">Waiting to be drawn.</span> <button type="button" class="save" data-save="vesper" hidden>Save as PNG</button></p>
   </figure>
 
   <figure class="plate">
     <canvas data-plate="thunder" width="2048" height="2048" role="img"
-      aria-label="A hand-drawn patent plate titled Bottling thunder, E. Marrowby's apparatus of 1893. A sankey diagram runs through the machine: of a storm's 100 claps, 58 are lost to the hills and 42 are caught by the rod. Of those, 5 burn up in the coils and 37 are cooled and pressed into three bottles: grade 1, a sharp crack, 7; grade 2, a low rumble, 21; grade 3, a far-off grumble, 9."></canvas>
+      aria-label="A pen-and-pencil patent plate titled Bottling thunder, E. Marrowby's apparatus of 1893. A sankey diagram runs through the machine: of a storm's 100 claps, 58 are lost to the hills and 42 are caught by the rod. Of those, 5 burn up in the coils and 37 are cooled and pressed into three bottles: grade 1, a sharp crack, 7; grade 2, a low rumble, 21; grade 3, a far-off grumble, 9."></canvas>
     <figcaption><h3>Bottling thunder</h3><span>A sankey of a storm, through a machine, into bottles.</span></figcaption>
     <p class="status"><span data-status="thunder" aria-live="polite">Waiting to be drawn.</span> <button type="button" class="save" data-save="thunder" hidden>Save as PNG</button></p>
   </figure>
 
   <figure class="plate">
     <canvas data-plate="comet" width="2048" height="2048" role="img"
-      aria-label="A hand-drawn star chart titled The comet's long way home. Comet Sorrel goes round the sun once every 76 years. A timeline under the drawing of its orbit reads: year 0, closest to the sun; year 5, passes a ringed giant; year 38, turns back, far away; year 71, passes the giant again; year 76, back at the sun."></canvas>
+      aria-label="A pen-and-pencil star chart titled The comet's long way home. Comet Sorrel goes round the sun once every 76 years. A timeline under the drawing of its orbit reads: year 0, closest to the sun; year 5, passes a ringed giant; year 38, turns back, far away; year 71, passes the giant again; year 76, back at the sun."></canvas>
     <figcaption><h3>The comet's long way home</h3><span>A timeline of one 76-year orbit.</span></figcaption>
     <p class="status"><span data-status="comet" aria-live="polite">Waiting to be drawn.</span> <button type="button" class="save" data-save="comet" hidden>Save as PNG</button></p>
   </figure>
@@ -70,7 +70,7 @@
   <ol class="steps">
     <li><b>Write the diagram as text.</b> A few lines of Mermaid.</li>
     <li><b>Let pele lay it out.</b> pele, Obsidian's open-source Mermaid renderer, places every box, band, curve and label. It measures each word with the same hand lettering the drawing uses, so everything fits.</li>
-    <li><b>Draw it by hand, in code.</b> A program reads pele's shapes back and redraws them with a simulated fine pen and coloured pencils, then draws the world around them. Every letter is traced from A. V. Hershey's 1967 engraving letters. The program runs right here, in your browser.</li>
+    <li><b>Draw it in code.</b> A program reads pele's shapes back and redraws them with a simulated fine pen and coloured pencils, then draws the world around them. Every letter is traced from A. V. Hershey's 1967 engraving letters. The program runs right here, in your browser.</li>
   </ol>
 
   <div class="made" data-made="wind">

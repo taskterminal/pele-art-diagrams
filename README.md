@@ -1,4 +1,4 @@
-# Diagrams, drawn by hand
+# Diagrams, drawn with JavaScript
 
 A one-page site of four diagram plates and the burger sheet. Nothing on it is an image file: every plate is drawn
 in the visitor's browser, in a Worker, by the same JavaScript that drew it in Node, from pele's layout of the
